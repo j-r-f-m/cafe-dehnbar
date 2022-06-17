@@ -1,0 +1,46 @@
+/* ================
+   General
+   ================ */
+
+
+
+/* ================
+   Typography 
+   ================ */
+
+
+/* ================
+Layout 
+================ */
+.contianer {
+    border: 1px solid magenta;
+    width: 90%;
+    margin: 0 auto;
+
+}   
+
+.container-flex {
+    display: flex;
+   
+    flex-direction: column;
+}
+
+header {
+    text-align: center;
+}
+
+footer {
+
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}                   
+
+nav li {
+    
+}       
