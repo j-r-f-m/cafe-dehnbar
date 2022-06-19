@@ -2,7 +2,9 @@
    General
    ================ */
 
-
+body {
+    margin: 0;
+}
 
 /* ================
    Typography 
@@ -12,25 +14,34 @@
 /* ================
 Layout 
 ================ */
-.contianer {
+.container {
     border: 1px solid magenta;
     width: 90%;
-    margin: 0 auto;
+
+    margin:0 auto;
 
 }   
 
 .container-flex {
+    
     display: flex;
-   
     flex-direction: column;
 }
 
 header {
+    /*center header*/
+    text-align: center;
+}
+
+main {
+    /* center element */
+    margin: 0 auto;
+    /* center text */
     text-align: center;
 }
 
 footer {
-
+    text-align: center;
 }
 
 nav ul {
