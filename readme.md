@@ -11,7 +11,8 @@
 
     - is the page supposed to be single page or do we link to different pages?
     - navigaions needs to make sense 
-
+    - what kind of navigation do you want to have (small screen)
+        -> burger menu?
 -----------------------------------
 
 --- content of different sections ---

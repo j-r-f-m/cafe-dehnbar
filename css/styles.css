@@ -6,6 +6,11 @@ body {
     margin: 0;
 }
 
+img {
+    display: block;
+    width: 100%;
+}
+
 /* ================
    Typography 
    ================ */
@@ -17,10 +22,11 @@ Layout
 .container {
     border: 1px solid magenta;
     width: 90%;
-
+    max-width: 900px;
     margin:0 auto;
 
 }   
+
 
 .container-flex {
     
@@ -55,3 +61,7 @@ nav ul {
 nav li {
     
 }       
+
+/* .section {
+    background: url(../images/background.jpg);
+} */
