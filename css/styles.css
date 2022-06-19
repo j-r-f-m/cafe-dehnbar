@@ -19,7 +19,7 @@ img {
 /* ================
 Layout 
 ================ */
-.container {
+.container, .top-navigation {
     border: 1px solid magenta;
     width: 90%;
     max-width: 900px;
@@ -34,9 +34,11 @@ Layout
     flex-direction: column;
 }
 
+
+
 header {
     /*center header*/
-    text-align: center;
+    /* text-align: center; */
 }
 
 main {
@@ -50,18 +52,46 @@ footer {
     text-align: center;
 }
 
-nav ul {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-}                   
+/* ================
+Navigation
+================ */
+.top-navigation {
+    /* sets behaviour for an elements overflow */
+    overflow: hidden;
+    background-color: #333;
+    position: relative;
+  }
 
-nav li {
-    
-}       
+.top-navigation #myLinks {
+    /* hide elements with the specified class, in this case the links from the 
+    the burger menu */
+    display: none;
+}
 
-/* .section {
-    background: url(../images/background.jpg);
-} */
+.top-navigation a {
+    /* select the only anchor element in "top-navigation", with the descandants
+    selector and style the it */
+    color: white;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    display: block;
+  }
+
+.top-navigation a.icon {
+    background: black;
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+  
+.top-navigation a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+
+  .active {
+    background-color: #04AA6D;
+    color: white;
+  }
