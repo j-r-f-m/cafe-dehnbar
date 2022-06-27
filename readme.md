@@ -1,8 +1,8 @@
-220617
+220625
 
 --- general notes ---
 
-    - the page is mobile first
+    - cretaing layout with grid
 
 ----------------------
 

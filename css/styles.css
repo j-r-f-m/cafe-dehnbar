@@ -1,218 +1,447 @@
 /* ================
    General
    ================ */
+html, body {
+    /* sticky footer */
+  height: 100%;
+  margin: 0;
+}
 
 body {
-    margin: 0;
+    
+    /* making a stiky footer with flex */
+    display: flex;
+    flex-direction: column;
 }
 
-img {
-    /* images are by default inline we change it to block here */
+/* images are by default inline we change it to block here */
+/* img {
+    
     display: block;
     width: 100%;
+} */
+
+
+/*  using width and height of div.shop */
+/*  in order to make our side-images the size of their designated cells
+    we give them 100% of their parent div and  the parent div gets the size of the 
+    cell */
+.menu > img, .shop > img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
 }
 
+.content-sec3 > img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+}
 
 
 /* ================
    Typography 
    ================ */
 
-
 /* ================
 Layout 
 ================ */
-.container, .top-navigation {
-    border: 1px solid magenta;
-    width: 90%;
-    max-width: 900px;
-    margin:0 auto;
 
-}   
-
-
-.container-flex {
-    
+.header {
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
 }
 
-
-main {
-    /* center element */
+.container {
+    width: 90%;
+    max-width: 1600px;
+    border: 1px solid magenta;
     margin: 0 auto;
-    /* center text */
-    text-align: center;
+    /* stiky footer */
+    flex: 1 0 auto;
 }
 
-footer {
-    text-align: center;
+.section-1, .section-3 {
+  display: grid;
+  align-items: center;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-rows: 1fr 2fr 1fr ;
+}
+
+.slides1-dot1 {
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+}
+
+
+.section-2 {
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr ;
+  gap: 15px;
+  align-items: center;
+}
+
+.slideshow-container2 {
+  /* positioning dots */
+  position: relative;
+
+}
+
+.slides2-dot2 {
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+}
+
+.dot2-container {
+  /* positioning dots on slideshow */
+  position: absolute;
+  bottom: 1em;
+  width: 100%;
+}
+
+.menu {
+  grid-column: 1 / 2;
+  grid-row: 2 / 3;
+  
+  /* using height and width of grid-cell */
+  width: 100%;
+  height: 100%;
+  
+  /* positioning button */
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.shop {
+  grid-column: 3 / 4;
+  grid-row: 2 / 3;
+  
+  /* using height and width of grid-cell */
+  width: 100%;
+  height: 100%;
+  
+  /* positioning button */
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.link-button {
+  position: absolute;
+  background-color: black;
+  color: white;
+
+}
+
+.section-3 {
+  display: grid;
+  
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-rows: 1fr 2fr 1fr ;
+}
+
+.content-sec3 {
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+  width: 100%;
+  height: 100%;
 }
 
 /* ================
 Navigation
 ================ */
-.top-navigation {
-    /* sets behaviour for an elements overflow */
-    overflow: hidden;
-    background-color: #333;
-    position: relative;
-  }
-
-.top-navigation #myLinks {
-    /* hide elements with the specified class, in this case the links from the 
-    the burger menu */
-    display: none;
+nav ul{
+    /* turn of bullet points */
+    list-style: none;
+    /* remove default padding */
+    padding: 0;
+    display: flex;
+    justify-content: center;
 }
 
-.top-navigation a {
-    /* select the only anchor element in "top-navigation", with the descandants
-    selector and style the it */
-    color: white;
-    padding: 14px 16px;
+nav li {
+    /* separate links */
+    margin: 0 0.5em 0 0.5em;
+}
+
+nav a {
     text-decoration: none;
-    font-size: 17px;
-    display: block;
-  }
-
-.top-navigation a.icon {
-    background: black;
-    display: block;
-    position: absolute;
-    right: 0;
-    top: 0;
 }
-  
-.top-navigation a:hover {
-    background-color: #ddd;
-    color: black;
-  }
 
-  .active {
-    background-color: #04AA6D;
-    color: white;
-  }
+.logo {
+    margin: 0 1em 0 1em;
+}
 
-  /* ================
+.footer {
+    text-align: center;
+    /* stiky footer */
+    flex-shrink: 0;
+}
+
+
+
+/* ====================
+Background images
+=======================*/
+
+/* the height of the background images controls the height of the sections */
+
+.section-1 {
+  background-image: url("../images/background-sec1.jpg");
+  background-color: green;
+  /* Full height */
+  height: 100vh; 
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.section-2 {
+  background-image: url("../images/background-sec2.jpg");
+  background-color: green;
+  /* Full height */
+  height: 100vh; 
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+.section-3 {
+  background-image: url("../images/background-sec3.jpg");
+  background-color: green;
+  /* Full height */
+  height: 100vh; 
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* .menu {
+  background-image: url("../images/menu-link.jpg");
+  background-color: green;
+
+  height: 300px; 
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+
+  padding-top: 2em;
+} */
+
+/* ====================
+Links and Buttons
+====================== */
+
+a:link, a:visited {
+  background-color: #f44336;
+  color: white;
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+a:hover, a:active {
+  background-color: red;
+}
+/* ===========================
 Slideshow
-================ */
+========================== */ 
+* {box-sizing:border-box}
 
-/* parent */
-.section-slideshow {
-    /* sets desired behavior for an element's overflow */
-    overflow: hidden;
-    /* child of mySlides needs to have a positon defined*/
-    position: relative;
-    width: 100%;
+/* 111111111111111111111111111111111111111111111111 */
+
+/* Slideshow container 1*/
+.slideshow-container {
+
+  /* control size of slide-show */
+  max-width: 800px;
+  position: relative;
+  
+  margin: auto;
 }
 
-/* child */
+/* Hide the images by default */
 .mySlides {
-    /* hide images by default */
-    display: none;
-    color: #fff;
-    width: 50%;
-    /* position .mySlides in absolute relation to its parent */
-    position: absolute;
-    /* position .mySlides */
-    inset: 5% 0 5% 0;
-    /* center div */
-    margin: 0 auto;
-    
+  display: none;
 }
 
-.dots {
-    position: absolute;
-        /* position .mySlides */
-        inset: 95% 0 5% 0;
-        /* center div */
-        margin: 0 auto;
-        text-align: center;
-}       
-
-
-/* child */
+/* Next & previous buttons */
 .prev, .next {
-    cursor: pointer;
-    position: absolute;
-    top: 50%;
-    width: auto;
-    margin-top: -22px;
-    padding: 16px;
-    color: white;
-    font-weight: bold;
-    font-size: 18px;
-    transition: 0.6s ease;
-    border-radius: 0 3px 3px 0;
-    user-select: none;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
 }
 
 /* Position the "next button" to the right */
 .next {
-    right: 0;
-    border-radius: 3px 0 0 3px;
-  }
-
-.prev {
-left: 0;
-border-radius: 3px 0 0 3px;
+  right: 0;
+  border-radius: 3px 0 0 3px;
 }
 
 /* On hover, add a black background color with a little bit see-through */
 .prev:hover, .next:hover {
-    background-color: rgba(218, 14, 14, 0.8);
+  background-color: rgba(0,0,0,0.8);
 }
-
-.prev:focus, .next:focus {
-    background-color: rgba(218, 14, 14, 0.8);
-}
-
 
 /* Caption text */
-.slideshow-text {
-    color: #f2f2f2;
-    font-size: 15px;
-    padding: 8px 12px;
-    position: absolute;
-    bottom: 8px;
-    width: 100%;
-    text-align: center;
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
 }
-  
+
 /* Number text (1/3 etc) */
 .numbertext {
-    color: #f2f2f2;
-    font-size: 12px;
-    padding: 8px 12px;
-    position: absolute;
-    top: 0;
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
 }
 
 /* The dots/bullets/indicators */
 .dot {
-    cursor: pointer;
-    height: 15px;
-    width: 15px;
-    margin: 0 2px;
-    background-color: #bbb;
-    border-radius: 50%;
-    display: inline-block;
-    transition: background-color 0.6s ease;
-  }
-
-
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
 
 .active, .dot:hover {
-    background-color: #717171;
+  background-color: #717171;
 }
 
 /* Fading animation */
 .fade {
-    animation-name: fade;
-    animation-duration: 1.5s;
-  }
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
 
 @keyframes fade {
-    from {opacity: .4}
-    to {opacity: 1}
-    }
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+/* 22222222222222222222222222222222222222222222222222222 */
+
+/* Slideshow container */
+.slideshow-container2 {
+
+  /* control size of slide-show */
+  max-width: 100%;
+  position: relative;
+  
+  margin: auto;
+}
+
+/* Hide the images by default */
+.mySlides2 {
+  display: none;
+}
+
+/* Next & previous buttons */
+.prev2, .next2 {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next2 {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev2:hover, .next2:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.text2 {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 2em;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext2 {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot2 {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active2, .dot2:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade2 {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
